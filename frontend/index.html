@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI vs Real Image Detector</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>AI vs Real Image Detector</h1>
+    <p>Upload an image to find out if it's real or AI-generated</p>
+</header>
+
+<div class="container">
+    <div class="drop-zone" id="drop-zone">
+        <div class="icon">&#128247;</div>
+        <p>Drag &amp; drop an image here</p>
+        <p>or <span class="browse">browse files</span></p>
+    </div>
+    <input type="file" id="file-input" accept="image/*">
+
+    <div class="preview-wrapper" id="preview-wrapper">
+        <img class="preview-img" id="preview-img" alt="preview">
+        <span class="file-name" id="file-name"></span>
+    </div>
+
+    <button class="analyze-btn" id="analyze-btn" disabled>Analyze Image</button>
+
+    <div class="spinner" id="spinner"></div>
+
+    <div class="result-card" id="result-card">
+        <div class="result-label" id="result-label"></div>
+        <div class="result-confidence" id="result-confidence"></div>
+        <div class="confidence-bar-bg">
+            <div class="confidence-bar" id="confidence-bar"></div>
+        </div>
+        <div class="result-note">Model trained on 32x32 CIFAKE dataset (CNN, ~93.9% accuracy)</div>
+    </div>
+</div>
+
+<footer>Built with TensorFlow &amp; FastAPI</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
